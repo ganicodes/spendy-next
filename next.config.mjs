@@ -12,10 +12,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: [
-              "https://spendy.ganicodes.in/",
-              "https://spendy-next.vercel.app/",
-            ],
+            value: "https://spendy.ganicodes.in/",
           }, // replace this your actual origin
           {
             key: "Access-Control-Allow-Methods",
