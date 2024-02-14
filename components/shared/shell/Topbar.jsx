@@ -11,7 +11,6 @@ import { ToggleTheme } from "../../ui/themeToggle";
 const Topbar = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  console.log("name: ", user);
 
   const pathname = usePathname();
 
@@ -39,7 +38,7 @@ const Topbar = () => {
   if (pathname.includes("/auth") || pathname === "/") return null;
 
   return (
-    <div className="flex items-center justify-end border-b p-2 dark:border-gray-700">
+    <div className="flex items-center justify-end border-b p-2 dark:border-gray-700 w-full">
       <ToggleTheme />
       <div className="flex items-center justify-between ml-8">
         <Image
@@ -50,7 +49,6 @@ const Topbar = () => {
           src={dummyProfile}
           className="mx-auto"
         />
-
         <p className="font-light align-middle ml-4">{user?.name}</p>
       </div>
     </div>

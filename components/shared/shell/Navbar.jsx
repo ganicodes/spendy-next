@@ -51,15 +51,20 @@ const Navbar = () => {
   if (pathname.includes("/auth") || pathname === "/") return null;
 
   return (
-    <nav className="hidden h-screen border-r md:block md:w-[280px] pt-8">
+    <nav className="hidden h-screen border-r border-border md:block md:w-[300px] bg-primary text-secondary dark:bg-background dark:text-foreground]">
+      <div className="h-[60px] mt-4 w-full mx-auto">
+        <Link href="/" className="font-black text-3xl px-4 dark:text-white">
+          Spendy
+        </Link>
+      </div>
       {navLinks.map((navlink, index) => (
         <Link
           href={navlink.link}
           key={index}
-          className={`px-4 py-2 text-md mr-0.5 flex cursor-pointer items-center justify-stretch gap-2  ${
+          className={`px-4 text-md flex cursor-pointer items-center justify-stretch gap-2  hover:text-primary dark:text-foreground  ${
             pathname === navlink.link
-              ? "bg-primary dark:bg-primary"
-              : "hover:bg-secondary"
+              ? "bg-background text-primary dark:bg-primary "
+              : "dark:hover:bg-secondary hover:bg-secondary"
           } }`}
         >
           <div className="m-2">

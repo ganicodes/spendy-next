@@ -61,3 +61,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+ion-icon {
+  font-size: 20px;
+}

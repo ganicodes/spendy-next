@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import ReduxProvider from "@/store/ReduxProvider";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata = {
@@ -47,15 +48,25 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            <Topbar />
-            <div className="flex gap-8">
+            <div className="max-w-screen-2xl mx-auto flex">
               <Navbar />
-              {children}
+              <div className="flex items-start w-full flex-col">
+                <Topbar />
+                {children}
+              </div>
             </div>
             <Toaster />
           </ThemeProvider>
         </body>
       </html>
+      <Script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      />
+      <Script
+        noModule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      />
     </ReduxProvider>
   );
 }
